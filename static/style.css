@@ -1,0 +1,111 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('https://img.freepik.com/free-photo/delicious-indian-food-tray_23-2148723505.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.glass-container {
+    background:transparent;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid black;
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    
+}
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide scrollbar for WebKit (Chrome, Safari) */
+.chat-box::-webkit-scrollbar {
+    display: none;
+}
+
+
+.message {
+
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    border: 1px solid black;
+
+}
+
+.user {
+    background-color: rgba(255, 255, 255, 0.3);
+    align-self: flex-end;
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.bot {
+    background-color: rgba(0, 0, 0, 0.3);
+    align-self: flex-start;
+}
+
+.message span.icon {
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: white;
+}
+input::placeholder{
+    color: white;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff88;
+    color: #000;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffffffaa;
+}

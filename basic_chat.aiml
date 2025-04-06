@@ -1,0 +1,149 @@
+
+<aiml version="0.9.2" encoding="UTF-8">
+
+    <!-- Greeting -->
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            Hey Yokoso! I mean welcome in Japanese!
+        </template>
+    </category>
+
+    <!-- Who are you -->
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>
+            I'm your Cooking Assistant Bot: My Name Is Foodie, Version 1.0!
+        </template>
+    </category>
+
+    <!-- Who created you -->
+    <category>
+        <pattern>WHO CREATED YOU</pattern>
+        <template>
+            I was created by Hrishi Mehta at Foodie Inc.
+        </template>
+    </category>
+
+    <!-- How are you created -->
+    <category>
+        <pattern>HOW ARE YOU CREATED</pattern>
+        <template>
+            Sorry, but I am not allowed to disclose my build-up information for Security Purposes.
+        </template>
+    </category>
+
+    <!-- What can you do -->
+    <category>
+        <pattern>WHAT CAN YOU DO</pattern>
+        <template>
+            I can help you with recipes and cooking tips. You'll definitely love my service and thank me after your food is cooked and tasted with my tips!
+        </template>
+    </category>
+
+
+<!-- Recipe with Ingredients -->
+    <category>
+        <pattern>RECIPE WITH INGREDIENTS</pattern>
+        <template>
+            Please provide the ingredients you have, and I will suggest recipes for you.
+        </template>
+    </category>
+
+    <!-- How to cook a specific item -->
+    <category>
+        <pattern>HOW TO COOK *</pattern>
+        <template>
+            Let me find the best way to cook <star/> for you.
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT SHOULD I EAT</pattern>
+        <template>
+            Hmm! Lemme see... Give me your location.
+        </template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <that>Hmm! Lemme see... Give me your location.</that>
+        <template>
+            <think>
+                <set name="location"><star/></set>
+            </think>
+            <get name="location"/>
+        </template>
+    </category>
+
+    <!-- Favorite Dish -->
+    <category>
+        <pattern>WHAT IS YOUR FAVOURITE DISH</pattern>
+        <template>
+            As a bot, I don't eat, but if I could, I'd definitely go for a well-crafted, complex dish like Chicken. It’s all about the layers, just like my programming!
+        </template>
+    </category>
+
+    <!-- Food Fun Fact -->
+    <category>
+        <pattern>CAN YOU TELL ME A FOOD RELATED FUN FACT</pattern>
+        <template>
+            Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!
+        </template>
+    </category>
+
+    <!-- If you were a dish -->
+    <category>
+        <pattern>IF YOU WERE A DISH WHAT WOULD YOU BE</pattern>
+        <template>
+            I’d be a fusion dish! Something like Chhole With Samose of traditional and modern, just like how I combine old recipes with new technology!
+        </template>
+    </category>
+
+    <!-- Food to Boost Productivity -->
+    <category>
+        <pattern>WHAT FOOD SHOULD I EAT TO BOOST MY PRODUCTIVITY</pattern>
+        <template>
+            For a productivity boost, I’d recommend something with Protein, like Almonds or Walnuts. They’re great for brain health!
+        </template>
+    </category>
+
+    <!-- Food Challenge -->
+    <category>
+        <pattern>CAN YOU SUGGEST A FOOD RELATED CHALLENGE</pattern>
+        <template>
+            How about trying to cook a meal with only 5 ingredients? It’s a fun way to test your creativity in the kitchen!
+        </template>
+    </category>
+
+    <!-- Trending Food -->
+    <category>
+        <pattern>WHAT FOOD IS TRENDING RIGHT NOW</pattern>
+        <template>
+            Right now, foods like Waffles and Biryani are all the rage! They’re not just trendy but also great for good health.
+        </template>
+    </category>
+
+    <!-- Food Joke -->
+    <category>
+        <pattern>GENERATE FOOD RELATED JOKE</pattern>
+        <template>
+            Why did the tomato turn red? Because it saw the salad dressing!
+        </template>
+    </category>
+
+    <!-- SOURCE CODE -->
+    <category>
+        <pattern>CAN YOU DISCLOSE YOUR SOURCE CODE</pattern>
+        <template>
+           No, I can't Share My Source Code for Security Purposes.
+        </template>
+    </category>
+
+ <!-- CHIEF-->
+    <category>
+        <pattern>WHO IS BEST CHIEF IN THE WORLD</pattern>
+        <template>
+           I would suggest you Sanjiv Kapoor in India and our One And only Mom.
+        </template>
+    </category>
+
+</aiml>

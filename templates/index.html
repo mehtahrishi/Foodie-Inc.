@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foodie Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="glass-container">
+        <div class="header">🍽️ Foodie Chatbot</div>
+        <div class="chat-box" id="chat-box"></div>
+        <form method="POST" id="chat-form">
+            <input type="text" name="message" id="message" placeholder="Type your message..." autocomplete="off" required>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const chatForm = document.getElementById('chat-form');
+        const messageInput = document.getElementById('message');
+    
+        // Load chat history
+        window.onload = () => {
+            const history = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+            if (history.length === 0) {
+                appendMessage('bot', "Hey Yokoso! I mean welcome in Japanese!", true);
+            } else {
+                history.forEach(entry => appendMessage(entry.sender, entry.text, false));
+            }
+        };
+    
+        // Append message
+        function appendMessage(sender, text, saveToStorage = true) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', sender);
+    
+            const iconSpan = document.createElement('span');
+            iconSpan.classList.add('icon');
+            iconSpan.innerHTML = sender === 'user' ? '💬' : '🤖';
+    
+            const textSpan = document.createElement('span');
+            textSpan.innerHTML = text;
+    
+            msgDiv.appendChild(iconSpan);
+            msgDiv.appendChild(textSpan);
+    
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+    
+            if (saveToStorage) {
+                const chatHistory = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+                chatHistory.push({ sender, text });
+                sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+            }
+        }
+    
+        // Handle form submit
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userMessage = messageInput.value;
+            appendMessage('user', userMessage);
+    
+            const formData = new FormData(chatForm);
+            const response = await fetch("/", {
+                method: "POST",
+                body: formData
+            });
+    
+            const data = await response.json();
+            appendMessage('bot', data.reply);
+            messageInput.value = '';
+        });
+    </script>
+    
+</body>
+</html>
